@@ -1,4 +1,5 @@
 import './App.css'
+import { ThemeProvider } from './contexts/theme-context'
 import { createGlobalStyle } from 'styled-components'
 import Header from './components/header'
 
@@ -6,7 +7,9 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Header />
+      <ThemeProvider>
+        <Header />
+      </ThemeProvider>
     </>
   )
 }
