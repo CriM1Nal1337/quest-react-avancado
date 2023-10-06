@@ -1,11 +1,12 @@
-import React, { useContext } from 'react'
+import React, {useContext} from "react"
 import { ThemeContext, themes } from "../../contexts/theme-context"
-import ThemeButton from "../themebutton"
+import { Button } from "../button"
 
 export const ThemeTogglerButton = () => {
+
     const { theme, setTheme } = useContext(ThemeContext)
 
     return (
-            <ThemeButton onClick={() => setTheme(theme === themes.light ? themes.dark : themes.light)}/>
+            <Button onClick={() => setTheme(theme === themes.light ? themes.dark : themes.light)}/>
     )
 }

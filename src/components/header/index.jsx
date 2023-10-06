@@ -1,23 +1,24 @@
 import React, {useContext} from "react";
-import { ThemeContext } from '../../contexts/theme-context';
+import { ThemeContext } from "../../contexts/theme-context"
 import styled from "styled-components";
-import { ThemeTogglerButton } from "../theme-toggler-button/theme-toggler-button";
-import { themes } from "../../contexts/theme-context";
-console.log(themes);
+import { ThemeTogglerButton } from "../theme-toggler-button";
+
+
 export const Header = () => {
+
+    const { theme } = useContext(ThemeContext)
+
     return (
-        <Headers >
+        <Headers style={{color: theme.color, backgroundColor: theme.background}}>
             <DivLogo>
                 <Logo src="public/images/logo.png" alt="logo"></Logo>
                 <h1>Lista de Pokemons</h1>
             </DivLogo>
-            <div>
-                <ThemeTogglerButton />
-            </div>
+            <ThemeTogglerButton/>
         </Headers>
     )
+    
 }
-
 const Headers = styled.header`
     display: flex;
     justify-content: space-between;
@@ -26,6 +27,7 @@ const Headers = styled.header`
     padding: 1rem 10rem;
     position: fixed;
     top: 0;
+    transition: 0.7s ease-in-out;
 `
 
 const DivLogo = styled.div`
