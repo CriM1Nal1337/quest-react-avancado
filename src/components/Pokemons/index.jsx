@@ -6,12 +6,19 @@ class Pokemons extends Component {
     super();
     this.state = {
       cards: [],
+      limit: 10,
     };
   }
 
   async componentDidMount() {
+    this.loadMore();
+  }
+
+  loadMore = async () => {
+    this.setState((prevState) => ({ limit: prevState.limit + 10 }));
+
     try {
-      const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=10&offset=0");
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${this.state.limit}&offset=0`);
       if (response.ok) {
         const data = await response.json();
         this.setState({
@@ -36,6 +43,7 @@ class Pokemons extends Component {
             </Li>
           ))}
         </Ul>
+        <button onClick={this.loadMore}>Carregar Mais</button>
       </section>
     );
   }
@@ -43,9 +51,11 @@ class Pokemons extends Component {
 
 const Ul = styled.ul`
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
     gap: 1rem;
+    margin: 2rem 5rem 3rem 5rem;
 `
 
 const Li = styled.li`

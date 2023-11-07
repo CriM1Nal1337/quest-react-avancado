@@ -1,9 +1,9 @@
 import './App.css'
+import React from "react";
 import { createGlobalStyle } from 'styled-components'
 import Header from './components/header'
 import { ThemeProvider } from './contexts/theme-context'
 import Main from './components/main'
-
 function App() {
   return (
     <ThemeProvider>

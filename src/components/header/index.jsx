@@ -8,11 +8,12 @@ export const Header = () => {
     const { theme } = useContext(ThemeContext)
 
     return (
-        <Headers style={{color: theme.color, backgroundColor: theme.background, borderBottom: `0.1rem solid ${theme.color}`}}>
+        <Headers style={{color: theme.color, backgroundColor: theme.background, borderBottom: `0.3rem solid ${theme.color}`}}>
             <DivLogo>
                 <Logo src="public/images/logo.png" alt="logo"></Logo>
-                <h1>Lista de Pokemons</h1>
+                
             </DivLogo>
+            <H1>Lista de Pokemons</H1>
             <ThemeTogglerButton/>
         </Headers>
     )
@@ -24,9 +25,12 @@ const Headers = styled.header`
     align-items: center;
     width: 100vw;
     padding: 1rem 10rem;
-    position: fixed;
+    position: relative;
     top: 0;
     transition: 0.3s ease-in-out;
+    @media (max-width: 645px) {
+        padding: 1rem 1rem;
+      }
 `
 
 const DivLogo = styled.div`
@@ -38,7 +42,16 @@ const DivLogo = styled.div`
 const Logo = styled.img`
     width: 13rem;
     padding: 1rem;
-    margin-right: 4rem;
+    @media (max-width: 645px) {
+        width: 9rem;
+      }
+`
+
+const H1 = styled.h1`
+      font-size: 3rem;
+@media (max-width: 645px) {
+    font-size: 1.8rem;
+  }
 `
 
 export default Header

@@ -20,8 +20,8 @@ const Mains = styled.main`
     justify-content: center;
     align-items: center;
     transition: 0.3s ease-in-out;
-    height: 100vh;
     width: 100vw;
+    min-height: 81.99vh;
 `
 
 export default Main

@@ -13,9 +13,14 @@ export const Button = (props) => {
 }
 
 const Buttons = styled.div`
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 10rem;
-    width: 9.5rem;
+    width: 10rem;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    @media (max-width: 645px) {
+        height: 7rem;
+        width: 7rem;
+      }
 `;
