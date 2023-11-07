@@ -17,5 +17,5 @@ const Buttons = styled.div`
     height: 10rem;
     width: 9.5rem;
     cursor: pointer;
-    transition: 0.7s ease-in-out;
+    transition: 0.3s ease-in-out;
 `;

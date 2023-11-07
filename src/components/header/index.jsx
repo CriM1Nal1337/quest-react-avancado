@@ -3,13 +3,12 @@ import { ThemeContext } from "../../contexts/theme-context"
 import styled from "styled-components";
 import { ThemeTogglerButton } from "../theme-toggler-button";
 
-
 export const Header = () => {
 
     const { theme } = useContext(ThemeContext)
 
     return (
-        <Headers style={{color: theme.color, backgroundColor: theme.background}}>
+        <Headers style={{color: theme.color, backgroundColor: theme.background, borderBottom: `0.1rem solid ${theme.color}`}}>
             <DivLogo>
                 <Logo src="public/images/logo.png" alt="logo"></Logo>
                 <h1>Lista de Pokemons</h1>
@@ -27,7 +26,7 @@ const Headers = styled.header`
     padding: 1rem 10rem;
     position: fixed;
     top: 0;
-    transition: 0.7s ease-in-out;
+    transition: 0.3s ease-in-out;
 `
 
 const DivLogo = styled.div`
